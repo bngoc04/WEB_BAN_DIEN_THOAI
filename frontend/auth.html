@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập / Đăng ký - TechNova</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="auth.css?v=2.0">
+    <style>
+        .back-home {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1001;
+            transition: color 0.3s;
+        }
+
+        .back-home:hover {
+            color: #2563eb;
+        }
+    </style>
+</head>
+
+<body class="auth-body">
+    <a href="index.html" class="back-home">
+        <i class="fas fa-arrow-left"></i>
+        Quay lại trang chủ
+    </a>
+
+    <div class="auth-container" id="container">
+        <!-- Sign Up Form -->
+        <div class="auth-form-container sign-up-container">
+            <form action="#" class="auth-form">
+                <h1>Tạo tài khoản</h1>
+                <div class="auth-social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>Hoặc đăng ký bằng email của bạn</span>
+                <div class="auth-input-group">
+                    <input type="text" placeholder="Họ và tên" required />
+                </div>
+                <div class="auth-input-group">
+                    <input type="email" placeholder="Email" required />
+                </div>
+                <div class="auth-input-group">
+                    <input type="password" placeholder="Mật khẩu" required />
+                </div>
+                <button type="submit" class="btn-auth">Đăng ký</button>
+            </form>
+        </div>
+
+        <!-- Sign In Form -->
+        <div class="auth-form-container sign-in-container">
+            <form action="#" class="auth-form">
+                <h1>Đăng nhập</h1>
+                <div class="auth-social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>Sử dụng tài khoản TechNova của bạn</span>
+                <div class="auth-input-group">
+                    <input type="email" placeholder="Email" required />
+                </div>
+                <div class="auth-input-group">
+                    <input type="password" placeholder="Mật khẩu" required />
+                </div>
+                <a href="#" class="forgot-pwd">Quên mật khẩu?</a>
+                <button type="submit" class="btn-auth">Đăng nhập</button>
+            </form>
+        </div>
+
+        <!-- Overlay -->
+        <div class="auth-overlay-container">
+            <div class="auth-overlay">
+                <div class="auth-overlay-panel overlay-left">
+                    <h1>Chào mừng trở lại!</h1>
+                    <p>Để giữ kết nối với chúng tôi, vui lòng đăng nhập bằng thông tin cá nhân của bạn</p>
+                    <button class="btn-auth btn-ghost" id="signIn">Đăng nhập</button>
+                </div>
+                <div class="auth-overlay-panel overlay-right">
+                    <h1>Chào bạn!</h1>
+                    <p>Nhập thông tin cá nhân của bạn và bắt đầu hành trình mua sắm với TechNova</p>
+                    <button class="btn-auth btn-ghost" id="signUp">Đăng ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = "http://localhost:3000/api";
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+        
+        // Handle Register
+        document.querySelector('.sign-up-container form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const name = e.target.querySelectorAll('input')[0].value;
+            const email = e.target.querySelectorAll('input')[1].value;
+            const password = e.target.querySelectorAll('input')[2].value;
+
+            try {
+                const response = await fetch(`${API_URL}/register`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert('Đăng ký thành công! Vui lòng đăng nhập.');
+                    container.classList.remove("right-panel-active");
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                alert('Lỗi kết nối server!');
+            }
+        });
+
+        // Handle Login
+        document.querySelector('.sign-in-container form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = e.target.querySelectorAll('input')[0].value;
+            const password = e.target.querySelectorAll('input')[1].value;
+
+            try {
+                const response = await fetch(`${API_URL}/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    localStorage.setItem('user', JSON.stringify(data.user));
+                    alert('Đăng nhập thành công!');
+                    if (data.user.role === 'admin') {
+                        window.location.href = 'admin.html';
+                    } else if (data.user.role === 'staff') {
+                        window.location.href = 'dashboard.html';
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                } else {
+                    alert(data.message);
+                }
+            } catch (error) {
+                alert('Lỗi kết nối server!');
+            }
+        });
+    </script>
+</body>
+
+</html>

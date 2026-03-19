@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Nhân viên | TechNova</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo">
+                <i class="fas fa-bolt"></i>
+                Tech<span>Nova</span>
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li class="active" onclick="switchSection('overview')">
+                <i class="fas fa-chart-pie"></i>
+                <span>Tổng quan</span>
+            </li>
+            <li onclick="switchSection('orders')">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Đơn hàng</span>
+            </li>
+            <li onclick="switchSection('products')">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Sản phẩm</span>
+            </li>
+            <li onclick="switchSection('inventory')">
+                <i class="fas fa-warehouse"></i>
+                <span>Kho hàng</span>
+            </li>
+            <li onclick="switchSection('support')">
+                <i class="fas fa-headset"></i>
+                <span>Hỗ trợ khách hàng</span>
+            </li>
+            <li onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Đăng xuất</span>
+            </li>
+        </ul>
+    </div>
+
+    <main class="main-content">
+        <header class="dashboard-header">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Tìm kiếm...">
+            </div>
+            <div class="user-profile">
+                <span id="staffName">Nhân viên</span>
+                <img src="https://ui-avatars.com/api/?name=Staff&background=random" alt="Avatar">
+            </div>
+        </header>
+
+        <!-- Overview Section -->
+        <section id="overview" class="section active">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="section-header-flex">
+                <h2 class="section-title">Tổng quan hệ thống</h2>
+                <div class="current-date">
+                    <i class="far fa-calendar-alt"></i>
+                    <span id="displayDate">Thứ Ba, 17 Tháng 3, 2026</span>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(37, 99, 235, 0.1); color: #2563eb;">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Tổng đơn hàng</h3>
+                        <p id="statTotalOrders">0</p>
+                        <span class="trend up"><i class="fas fa-arrow-up"></i> 12% so với tháng trước</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(124, 58, 237, 0.1); color: #7c3aed;">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Doanh thu</h3>
+                        <p id="statRevenue">0 ₫</p>
+                        <span class="trend up"><i class="fas fa-arrow-up"></i> 8% so với tuần trước</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(251, 188, 5, 0.1); color: #fbbc05;">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Đang xử lý</h3>
+                        <p id="statPending">0</p>
+                        <span class="trend neutral">0% biến động</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Sản phẩm</h3>
+                        <p id="statProducts">0</p>
+                        <span class="trend up"><i class="fas fa-plus"></i> 2 sản phẩm mới</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Thống kê Trạng thái Đơn hàng</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="orderStatusChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Doanh thu theo thời gian</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="revenueTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-grid">
+                <div class="recent-box">
+                    <div class="box-header">
+                        <h3>Đơn hàng mới nhất</h3>
+                        <button class="btn-view" onclick="switchSection('orders')">Xem tất cả</button>
+                    </div>
+                    <div id="recentOrdersList" class="recent-list">
+                        <!-- Data injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Orders Section -->
+        <section id="orders" class="section">
+            <h2 class="section-title">Quản lý Đơn hàng</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Mã đơn</th>
+                            <th>Khách hàng</th>
+                            <th>Sản phẩm</th>
+                            <th>Tổng thanh toán</th>
+                            <th>Ngày đặt</th>
+                            <th>Trạng thái</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fullOrdersTable">
+                        <!-- Data injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Products Section -->
+        <section id="products" class="section">
+            <div class="section-header-flex">
+                <h2 class="section-title">Quản lý Sản phẩm</h2>
+                <button class="btn btn-primary" onclick="openProductModal()"><i class="fas fa-plus"></i> Thêm sản phẩm</button>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ảnh</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Kho</th>
+                            <th>Danh mục</th>
+                            <th>Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody id="fullProductsTable">
+                        <!-- Data injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Inventory Section -->
+        <section id="inventory" class="section">
+            <div class="section-header-flex">
+                <h2 class="section-title">Quản lý Kho hàng</h2>
+                <div class="inventory-stats">
+                    <span class="badge badge-warning" id="lowStockCount">0 sản phẩm sắp hết</span>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Hiện có</th>
+                            <th>Trạng thái kho</th>
+                            <th>Cập nhật nhanh</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTable">
+                        <!-- Data injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section id="support" class="section">
+            <h2 class="section-title">Hỗ trợ khách hàng</h2>
+            <div class="ticket-list" id="ticketList">
+                <!-- Data injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Product -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            <h2 id="modalTitle">Thêm Sản phẩm mới</h2>
+            <form id="productForm">
+                <input type="hidden" id="pId">
+                <div class="form-group">
+                    <label>Tên sản phẩm</label>
+                    <input type="text" id="pName" required>
+                </div>
+                <div class="form-group">
+                    <label>Giá (VNĐ)</label>
+                    <input type="text" id="pPrice" placeholder="VD: 25.000.000 ₫" required>
+                </div>
+                <div class="form-group">
+                    <label>Số lượng kho</label>
+                    <input type="number" id="pStock" required>
+                </div>
+                <div class="form-group">
+                    <label>Link ảnh</label>
+                    <input type="text" id="pImage" required>
+                </div>
+                <div class="form-group">
+                    <label>Mô tả ngắn</label>
+                    <textarea id="pDesc" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Lưu thông tin</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="dashboard-app.js"></script>
+</body>
+</html>

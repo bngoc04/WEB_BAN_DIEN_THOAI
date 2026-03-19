@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phụ kiện cao cấp | TechNova</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="top-header">
+        <div class="top-banner">
+            Có AI Thông minh hơn Xài SƯỚNG hơn <span class="discount-box">Giảm đến 50%</span>
+        </div>
+        <nav class="navbar">
+            <div class="nav-main">
+                <div class="nav-container">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt"></i>
+                        Tech<span>Nova</span>
+                    </a>
+                    
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Bạn tìm gì hôm nay?">
+                    </div>
+
+                    <div class="nav-actions">
+                        <a href="auth.html" class="action-item">
+                            <i class="far fa-user"></i>
+                            Đăng nhập
+                        </a>
+                        <a href="cart.html" class="action-item">
+                            <div style="position: relative;">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            Giỏ hàng
+                        </a>
+                        <div class="location-container">
+                            <div class="location-btn">
+                                <i class="fas fa-location-dot"></i>
+                                <span class="current-location">Hồ Chí Minh</span>
+                                <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i>
+                            </div>
+                            <div class="location-dropdown">
+                                <h4>Chọn khu vực của bạn</h4>
+                                <div class="location-list">
+                                    <div class="loc-item active" onclick="selectLocation('Hồ Chí Minh')">Hồ Chí Minh</div>
+                                    <div class="loc-item" onclick="selectLocation('Hà Nội')">Hà Nội</div>
+                                    <div class="loc-item" onclick="selectLocation('Đà Nẵng')">Đà Nẵng</div>
+                                    <div class="loc-item" onclick="selectLocation('Cần Thơ')">Cần Thơ</div>
+                                    <div class="loc-item" onclick="selectLocation('Hải Phòng')">Hải Phòng</div>
+                                    <div class="loc-item" onclick="selectLocation('Bình Dương')">Bình Dương</div>
+                                    <div class="loc-item" onclick="selectLocation('Đồng Nai')">Đồng Nai</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-nav">
+                <div class="cat-container">
+                    <a href="phones.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>Điện thoại</span>
+                    </a>
+                    <div class="has-mega">
+                        <a href="accessories.html" class="cat-item">
+                            <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                            <span>Phụ kiện</span>
+                            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-container">
+                                <div class="mega-column">
+                                    <h4>Phụ kiện di động</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-battery-three-quarters"></i><span>Sạc dự phòng</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-bolt"></i><span>Sạc, cáp</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-mobile-alt"></i><span>Ốp lưng điện thoại</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-tablet-alt"></i><span>Ốp máy tính bảng</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-scroll"></i><span>Miếng dán màn hình</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-pen-nib"></i><span>Bút cảm ứng</span></a>
+                                    </div>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Thiết bị âm thanh</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-headphones"></i><span>Tai nghe Bluetooth</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-headphones-alt"></i><span>Tai nghe có dây</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-volume-up"></i><span>Loa Bluetooth</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-microphone"></i><span>Micro thu âm</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-music"></i><span>Loa vi tính</span></a>
+                                    </div>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Camera</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-video"></i><span>Camera giám sát</span><span class="badge-hot">Hot</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-camera"></i><span>Camera hành trình</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-camera-retro"></i><span>Máy ảnh</span><span class="badge-new">Mới</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-memory"></i><span>Thẻ nhớ</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="smartwatch.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="6" rx="1"></rect><rect x="6" y="16" width="12" height="6" rx="1"></rect><rect x="4" y="8" width="16" height="8" rx="2"></rect></svg>
+                        <span>Smartwatch</span>
+                    </a>
+                    <a href="watches.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg>
+                        <span>Đồng hồ</span>
+                    </a>
+                    <a href="tablet.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>Tablet</span>
+                    </a>
+                    <div class="has-dropdown">
+                        <a href="#" class="cat-item">
+                            <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
+                            <span>Máy cũ, Thu cũ</span>
+                            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu">
+                            <h4>Máy cũ, Thu cũ</h4>
+                            <div class="dropdown-grid">
+                                <a href="#" class="dropdown-item">
+                                    <div class="drop-icon-box">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <div class="drop-badge">MÁY CŨ</div>
+                                    </div>
+                                    <span>Máy cũ giá tốt</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="drop-icon-box">
+                                        <i class="fas fa-sync-alt"></i>
+                                        <div class="drop-badge">THU CŨ</div>
+                                    </div>
+                                    <span>Thu cũ đổi mới</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <span>Màn hình</span>
+                    </a>
+                    <a href="#" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        <span>Sim, Thẻ cào</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Accessories Section -->
+    <div class="page-container" style="padding-top: 2rem;">
+        <div class="section-header scroll-fade-up show">
+            <h1
+                style="font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, #fff, #a0a0ab); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
+                Phụ Kiện Chính Hãng</h1>
+            <p style="color: var(--text-secondary); font-size: 1.2rem;">Hoàn thiện hệ sinh thái công nghệ của bạn bằng
+                những món phụ kiện tối tân nhất.</p>
+        </div>
+
+        <div class="product-grid" id="accessoryGrid">
+            <!-- Dynamically loaded from API -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechNova. Bản quyền đã được bảo hộ.</p>
+        </div>
+    </footer>
+
+    <script>
+        let accessories = [];
+
+        function updateCartBadge() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const cartCountElement = document.querySelector(".cart-count");
+            if (cartCountElement) {
+                cartCountElement.textContent = totalQty;
+            }
+        }
+
+        async function fetchAccessories() {
+            try {
+                const response = await fetch(`${API_URL}/products`);
+                if (!response.ok) throw new Error("Không thể tải phụ kiện");
+                const allProducts = await response.json();
+                
+                // Filter only accessories
+                accessories = allProducts.filter(p => p.category === "Phụ kiện");
+                renderAccessories(accessories);
+            } catch (error) {
+                console.error("Lỗi:", error);
+                document.getElementById('accessoryGrid').innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #ef4444;">Không thể tải dữ liệu phụ kiện.</p>';
+            }
+        }
+
+        function renderAccessories(items) {
+            const grid = document.getElementById('accessoryGrid');
+            grid.innerHTML = "";
+
+            if (items.length === 0) {
+                grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">Hiện chưa có sản phẩm phụ kiện nào.</p>';
+                return;
+            }
+
+            items.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = `product-card scroll-fade-up show delay-${(index % 4) + 1}`;
+                card.innerHTML = `
+                    <div class="product-image" onclick="window.location.href='product-detail.html?id=${item.id}'" 
+                        style="background: url('${item.image}') center/cover no-repeat; height: 250px; border-radius: 12px; margin-bottom: 1.5rem; width: 100%; cursor: pointer;">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title" onclick="window.location.href='product-detail.html?id=${item.id}'" style="cursor: pointer;">${item.name}</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.5rem; height: 3.2em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${item.desc}</p>
+                        <div class="product-price">${item.price}</div>
+                        <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                            <button class="add-to-cart-btn" onclick="addToCartLocal(${item.id})" style="flex: 1;">Thêm vào giỏ</button>
+                            <button class="buy-now-btn" onclick="buyNow(${item.id})" style="flex: 1; background: #e11d48; color: white; border: none; padding: 0.8rem; border-radius: 8px; font-weight: 600; cursor: pointer;">Mua ngay</button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function addToCartLocal(id) {
+            const product = accessories.find(p => p.id === id);
+            if (!product) return;
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingIndex = cart.findIndex(item => item.id === id);
+
+            if (existingIndex !== -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    qty: 1
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartBadge();
+            
+            const cartCountElement = document.querySelector(".cart-count");
+            if (cartCountElement) {
+                cartCountElement.style.transform = "scale(1.3)";
+                setTimeout(() => cartCountElement.style.transform = "scale(1)", 200);
+            }
+
+            alert(`Đã thêm ${product.name} vào giỏ hàng!`);
+        }
+
+        function buyNow(id) {
+            window.location.href = `checkout.html?productId=${id}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchAccessories();
+        });
+    </script>
+</body>
+</html>

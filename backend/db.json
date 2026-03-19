@@ -1,0 +1,472 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "iPhone 15 Pro Max",
+            "price": "34.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=800&auto=format&fit=crop",
+            "desc": "Khung Titan bền bỉ, chip A17 Pro đỉnh cao, camera Zoom 5x cực đỉnh.",
+            "stock": 15,
+            "category": "Điện thoại",
+            "specs": {
+                "screen": "6.7 inch, Super Retina XDR, 120Hz",
+                "cpu": "Apple A17 Pro (3nm)",
+                "ram": "8GB",
+                "battery": "4422 mAh, Sạc nhanh 20W"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Samsung Galaxy S24 Ultra",
+            "price": "33.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800&auto=format&fit=crop",
+            "desc": "Galaxy AI quyền năng, bút S Pen tích hợp, camera 200MP siêu sắc nét.",
+            "stock": 20,
+            "category": "Điện thoại",
+            "specs": {
+                "screen": "6.8 inch, Dynamic AMOLED 2X, 120Hz",
+                "cpu": "Snapdragon 8 Gen 3 for Galaxy",
+                "ram": "12GB",
+                "battery": "5000 mAh, Sạc nhanh 45W"
+            }
+        },
+        {
+            "id": 4,
+            "name": "iPad Pro M2 11 inch",
+            "price": "23.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop",
+            "desc": "Sức mạnh chip M2 không giới hạn, màn hình Liquid Retina tuyệt vời.",
+            "stock": 12,
+            "category": "Máy tính bảng",
+            "specs": {
+                "screen": "11 inch, Liquid Retina, 120Hz",
+                "cpu": "Apple M2 8 nhân",
+                "ram": "8GB",
+                "battery": "7538 mAh"
+            }
+        },
+        {
+            "id": 5,
+            "name": "iPad Air 5 M1",
+            "price": "14.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?q=80&w=800&auto=format&fit=crop",
+            "desc": "Mỏng nhẹ rực rỡ với chip M1 mạnh mẽ, nhiều màu sắc cá tính.",
+            "stock": 18,
+            "category": "Máy tính bảng",
+            "specs": {
+                "screen": "10.9 inch, Liquid Retina",
+                "cpu": "Apple M1",
+                "ram": "8GB",
+                "battery": "7600 mAh"
+            }
+        },
+        {
+            "id": 6,
+            "name": "Google Pixel 8 Pro",
+            "price": "24.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800&auto=format&fit=crop",
+            "desc": "Camera AI đỉnh cao, trải nghiệm Android thuần khiết, chip Tensor G3.",
+            "stock": 10,
+            "category": "Điện thoại",
+            "specs": {
+                "screen": "6.7 inch, LTPO OLED, 120Hz",
+                "cpu": "Google Tensor G3",
+                "ram": "12GB",
+                "battery": "5050 mAh"
+            }
+        },
+        {
+            "id": 7,
+            "name": "iPad Gen 10 10.9-inch",
+            "price": "10.490.000 ₫",
+            "image": "https://images.unsplash.com/photo-1589739900243-4b52cd9b104e?q=80&w=800&auto=format&fit=crop",
+            "desc": "Thiết kế mới rực rỡ, cổng USB-C, hỗ trợ Magic Keyboard Folio.",
+            "stock": 30,
+            "category": "Máy tính bảng",
+            "specs": {
+                "screen": "10.9 inch, Liquid Retina",
+                "cpu": "Apple A14 Bionic",
+                "ram": "4GB",
+                "battery": "28.6 watt-hour"
+            }
+        },
+        {
+            "id": 8,
+            "name": "Xiaomi 14 Ultra",
+            "price": "32.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1678911820864-e2c567c655d7?q=80&w=800&auto=format&fit=crop",
+            "desc": "Ống kính Leica chuyên nghiệp, chip Snapdragon mạnh nhất hiện nay.",
+            "stock": 8,
+            "category": "Điện thoại",
+            "specs": {
+                "screen": "6.73 inch, LTPO AMOLED, 120Hz",
+                "cpu": "Snapdragon 8 Gen 3",
+                "ram": "16GB",
+                "battery": "5000 mAh, Sạc nhanh 90W"
+            }
+        },
+        {
+            "id": 9,
+            "name": "Samsung Galaxy Z Fold 5",
+            "price": "40.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800&auto=format&fit=crop",
+            "desc": "Mở ra thế giới giải trí cực đỉnh với màn hình gập 7.6 inch cực đại.",
+            "stock": 5,
+            "category": "Điện thoại",
+            "specs": {
+                "screen": "Chính: 7.6 inch, Phụ: 6.2 inch, 120Hz",
+                "cpu": "Snapdragon 8 Gen 2 for Galaxy",
+                "ram": "12GB",
+                "battery": "4400 mAh, Sạc nhanh 25W"
+            }
+        },
+        {
+            "id": 10,
+            "name": "iPad Pro M4 13-inch",
+            "price": "37.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop",
+            "desc": "Mỏng nhẹ nhất thế giới, sức mạnh chip M4 vượt xa mọi giới hạn.",
+            "stock": 10,
+            "category": "Máy tính bảng",
+            "specs": {
+                "screen": "13 inch, Ultra Retina XDR, 120Hz",
+                "cpu": "Apple M4 10 nhân",
+                "ram": "8GB / 16GB",
+                "battery": "38.99 watt-hour"
+            }
+        },
+        {
+            "id": 11,
+            "name": "iPad Mini 6 8.3-inch",
+            "price": "12.490.000 ₫",
+            "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?q=80&w=800&auto=format&fit=crop",
+            "desc": "Sức mạnh nằm gọn trong lòng bàn tay, màn hình Liquid Retina sắc nét.",
+            "stock": 20,
+            "category": "Máy tính bảng",
+            "specs": {
+                "screen": "8.3 inch, Liquid Retina",
+                "cpu": "Apple A15 Bionic",
+                "ram": "4GB",
+                "battery": "19.3 watt-hour"
+            }
+        },
+        {
+            "id": 12,
+            "name": "iPhone 14 Pro",
+            "price": "24.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1673462610233-049948619623?q=80&w=800&auto=format&fit=crop",
+            "desc": "Màn hình Always-On, Dynamic Island lần đầu xuất hiện, chip A16 cực mạnh.",
+            "stock": 10,
+            "category": "Điện thoại",
+            "specs": {
+                "screen": "6.1 inch, LTPO Super Retina XDR",
+                "cpu": "Apple A16 Bionic",
+                "ram": "6GB",
+                "battery": "3200 mAh"
+            }
+        },
+        {
+            "id": 13,
+            "name": "Samsung Galaxy S23 Ultra",
+            "price": "22.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800&auto=format&fit=crop",
+            "desc": "Camera 200MP, bút S Pen thần thánh, hiệu năng vẫn cực đỉnh.",
+            "stock": 15,
+            "category": "Điện thoại",
+            "specs": {
+                "screen": "6.8 inch, Dynamic AMOLED 2X",
+                "cpu": "Snapdragon 8 Gen 2 for Galaxy",
+                "ram": "8GB / 12GB",
+                "battery": "5000 mAh"
+            }
+        },
+        {
+            "id": 14,
+            "name": "iPad Gen 9 10.2-inch",
+            "price": "7.490.000 ₫",
+            "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop",
+            "desc": "Chiếc iPad quốc dân cho học tập và làm việc, giá rẻ bất ngờ.",
+            "stock": 50,
+            "category": "Máy tính bảng",
+            "specs": {
+                "screen": "10.2 inch, Retina display",
+                "cpu": "Apple A13 Bionic",
+                "ram": "3GB",
+                "battery": "32.4 watt-hour"
+            }
+        },
+        {
+            "id": 15,
+            "name": "AirPods Pro 2",
+            "price": "5.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?q=80&w=800&auto=format&fit=crop",
+            "desc": "Chống ồn chủ động. Âm thanh không gian đỉnh cao.",
+            "stock": 30,
+            "category": "Phụ kiện",
+            "specs": {
+                "connect": "Bluetooth 5.3",
+                "battery": "6 giờ (có ANC), 30 giờ với hộp sạc",
+                "feature": "Chống nước IPX4, sạc MagSafe"
+            }
+        },
+        {
+            "id": 16,
+            "name": "Apple Watch Ultra 2",
+            "price": "21.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1434493789847-2f02b0c13637?q=80&w=800&auto=format&fit=crop",
+            "desc": "Vỏ Titanium siêu bền, màn hình sáng 3000 nits.",
+            "stock": 10,
+            "category": "Phụ kiện",
+            "specs": {
+                "screen": "OLED Retina LTPO",
+                "battery": "36 giờ sử dụng bình thường",
+                "feature": "Chống nước 100m, Dual GPS"
+            }
+        },
+        {
+            "id": 17,
+            "name": "Sạc 20W USB-C Apple",
+            "price": "590.000 ₫",
+            "image": "https://images.unsplash.com/photo-1628148810793-270fb7b2f4f2?q=80&w=800&auto=format&fit=crop",
+            "desc": "Sạc nhanh an toàn cho iPhone và iPad.",
+            "stock": 100,
+            "category": "Phụ kiện",
+            "specs": {
+                "power": "20W",
+                "port": "USB-C",
+                "feature": "Sạc nhanh chuẩn Power Delivery"
+            }
+        },
+        {
+            "id": 18,
+            "name": "Ốp lưng Silicone iPhone 15",
+            "price": "1.290.000 ₫",
+            "image": "https://images.unsplash.com/photo-1603539827014-934d4a8ee1b7?q=80&w=800&auto=format&fit=crop",
+            "desc": "Hỗ trợ MagSafe, chất liệu silicone mềm mại.",
+            "stock": 50,
+            "category": "Phụ kiện",
+            "specs": {
+                "material": "Silicone",
+                "feature": "Hỗ trợ MagSafe, chống trầy xước"
+            }
+        },
+        {
+            "id": 19,
+            "name": "Apple Pencil Gen 2",
+            "price": "3.290.000 ₫",
+            "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=800&auto=format&fit=crop",
+            "desc": "Phác họa chân thực, độ nhạy áp lực tuyệt đối.",
+            "stock": 25,
+            "category": "Phụ kiện",
+            "specs": {
+                "connect": "Bluetooth, Gắn nam châm",
+                "feature": "Sạc không dây, Chạm đúp chuyển đổi công cụ"
+            }
+        },
+        {
+            "id": 20,
+            "name": "Sony WH-1000XM5",
+            "price": "8.490.000 ₫",
+            "image": "https://images.unsplash.com/photo-1588156979403-17eb9b9e6e44?q=80&w=800&auto=format&fit=crop",
+            "desc": "Chống ồn Over-ear hàng đầu thế giới.",
+            "stock": 15,
+            "category": "Phụ kiện",
+            "specs": {
+                "connect": "Bluetooth 5.2",
+                "battery": "30 giờ sử dụng",
+                "feature": "Chế độ âm thanh xung quanh, Hi-Res Audio"
+            }
+        },
+        {
+            "id": 21,
+            "name": "Apple Watch Series 9",
+            "price": "10.490.000 ₫",
+            "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?q=80&w=800&auto=format&fit=crop",
+            "desc": "Theo dõi sức khỏe thông minh, màn hình luôn hiển thị sáng hơn.",
+            "stock": 15,
+            "category": "Smartwatch",
+            "specs": {
+                "screen": "OLED Retina LTPO",
+                "battery": "18 giờ sử dụng",
+                "feature": "Siri nhanh hơn, Double Tap"
+            }
+        },
+        {
+            "id": 22,
+            "name": "Samsung Galaxy Watch 6",
+            "price": "5.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=800&auto=format&fit=crop",
+            "desc": "Thấu hiểu sức khỏe cá nhân, viền xoay thanh mảnh.",
+            "stock": 20,
+            "category": "Smartwatch",
+            "specs": {
+                "screen": "Super AMOLED",
+                "battery": "40 giờ sử dụng",
+                "feature": "Theo dõi giấc ngủ, đo huyết áp"
+            }
+        },
+        {
+            "id": 23,
+            "name": "Garmin Venu 3",
+            "price": "11.990.000 ₫",
+            "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=800&auto=format&fit=crop",
+            "desc": "Đồng hồ GPS thể thao cao cấp, huấn luyện viên sức khỏe.",
+            "stock": 12,
+            "category": "Smartwatch",
+            "specs": {
+                "screen": "AMOLED 1.4 inch",
+                "battery": "14 ngày ở chế độ đồng hồ",
+                "feature": "Định vị GPS, hơn 30 ứng dụng thể thao"
+            }
+        },
+        {
+            "id": 24,
+            "name": "Casio Edifice EFR-552D",
+            "price": "3.450.000 ₫",
+            "image": "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=800&auto=format&fit=crop",
+            "desc": "Thiết kế thể thao mạnh mẽ, vỏ thép không gỉ.",
+            "stock": 10,
+            "category": "Đồng hồ",
+            "specs": {
+                "type": "Quartz",
+                "material": "Thép không gỉ",
+                "feature": "Chống nước 100m, Bấm giờ thể thao"
+            }
+        },
+        {
+            "id": 25,
+            "name": "Seiko 5 Sports SRPD55K1",
+            "price": "6.850.000 ₫",
+            "image": "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?q=80&w=800&auto=format&fit=crop",
+            "desc": "Sự lựa chọn hoàn hảo cho phong cách năng động.",
+            "stock": 8,
+            "category": "Đồng hồ",
+            "specs": {
+                "type": "Automatic",
+                "material": "Thép không gỉ",
+                "feature": "Trữ cót 41 giờ, Chống nước 100m"
+            }
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "Điện thoại"
+        },
+        {
+            "id": 2,
+            "name": "Máy tính bảng"
+        },
+        {
+            "id": 3,
+            "name": "Phụ kiện"
+        },
+        {
+            "id": 4,
+            "name": "Laptop"
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "Test User",
+            "email": "test@test.com",
+            "password": "123",
+            "role": "customer"
+        },
+        {
+            "id": 2,
+            "name": "Nhân viên TechNova",
+            "email": "staff@technova.vn",
+            "password": "staff123",
+            "role": "staff"
+        },
+        {
+            "id": 3,
+            "name": "Admin TechNova",
+            "email": "admin@technova.vn",
+            "password": "admin123",
+            "role": "admin"
+        }
+    ],
+    "orders": [
+        {
+            "id": "ORD001",
+            "customerName": "Test User",
+            "email": "test@test.com",
+            "total": "34.990.000 ₫",
+            "status": "Confirmed",
+            "date": "2024-03-15",
+            "items": [
+                "iPhone 15 Pro Max"
+            ]
+        },
+        {
+            "id": "ORD1773740410894",
+            "customerName": "Test User",
+            "email": "test@test.com",
+            "phone": "084758684",
+            "address": "nhdfdjghf",
+            "total": "39.980.000 ₫",
+            "items": [
+                "iPhone 15 Pro Max (x1)",
+                "AirPods Pro 2 (x1)"
+            ],
+            "status": "Confirmed",
+            "date": "2026-03-17"
+        },
+        {
+            "id": "ORD1773741155472",
+            "customerName": "Test User",
+            "email": "test@test.com",
+            "phone": "8765432",
+            "address": "ng",
+            "total": "39.980.000 ₫",
+            "items": [
+                "AirPods Pro 2 (x1)",
+                "iPhone 15 Pro Max (x1)"
+            ],
+            "status": "Shipped",
+            "date": "2026-03-17"
+        },
+        {
+            "id": "ORD1773756632768",
+            "customerName": "Test User",
+            "email": "test@test.com",
+            "phone": "08476574",
+            "address": "gfdxgf",
+            "total": "44.480.000 ₫",
+            "items": [
+                "Apple Watch Series 9 (x1)",
+                "iPhone 15 Pro Max (x1)"
+            ],
+            "status": "Hoàn tất",
+            "date": "2026-03-17"
+        }
+    ],
+    "support_tickets": [
+        {
+            "id": 1,
+            "customerName": "Lê Văn C",
+            "subject": "Hỏi về bảo hành iPhone",
+            "message": "Cho mình hỏi iPhone 15 Pro Max bảo hành bao lâu?",
+            "status": "Open",
+            "date": "2024-03-15"
+        }
+    ],
+    "vouchers": [
+        {
+            "id": 1,
+            "code": "TECHNOVA10",
+            "discount": 0.1,
+            "desc": "Giảm 10% cho đơn hàng đầu tiên"
+        },
+        {
+            "id": 2,
+            "code": "FREESHIP",
+            "discount": 0,
+            "desc": "Miễn phí vận chuyển"
+        }
+    ],
+    "reviews": []
+}

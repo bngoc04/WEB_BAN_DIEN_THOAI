@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đồng hồ | TechNova</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css?v=1.2">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header class="top-header">
+        <div class="top-banner">
+            Đồng hồ thời trang <span class="discount-box">BST Mới Nhất</span>
+        </div>
+        <nav class="navbar">
+            <div class="nav-main">
+                <div class="nav-container">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt"></i>
+                        Tech<span>Nova</span>
+                    </a>
+                    
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Tìm kiếm đồng hồ...">
+                    </div>
+
+                        <div class="nav-actions">
+                            <a href="auth.html" class="action-item">
+                                <i class="far fa-user"></i>
+                                Đăng nhập
+                            </a>
+                            <a href="cart.html" class="action-item">
+                                <div style="position: relative;">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <span class="cart-count">0</span>
+                                </div>
+                                Giỏ hàng
+                            </a>
+                            <div class="location-container">
+                                <div class="location-btn">
+                                    <i class="fas fa-location-dot"></i>
+                                    <span class="current-location">Hồ Chí Minh</span>
+                                    <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i>
+                                </div>
+                                <div class="location-dropdown">
+                                    <h4>Chọn khu vực của bạn</h4>
+                                    <div class="location-list">
+                                        <div class="loc-item active" onclick="selectLocation('Hồ Chí Minh')">Hồ Chí Minh</div>
+                                        <div class="loc-item" onclick="selectLocation('Hà Nội')">Hà Nội</div>
+                                        <div class="loc-item" onclick="selectLocation('Đà Nẵng')">Đà Nẵng</div>
+                                        <div class="loc-item" onclick="selectLocation('Cần Thơ')">Cần Thơ</div>
+                                        <div class="loc-item" onclick="selectLocation('Hải Phòng')">Hải Phòng</div>
+                                        <div class="loc-item" onclick="selectLocation('Bình Dương')">Bình Dương</div>
+                                        <div class="loc-item" onclick="selectLocation('Đồng Nai')">Đồng Nai</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div class="category-nav">
+                <div class="cat-container">
+                    <a href="phones.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>Điện thoại</span>
+                    </a>
+                    <a href="accessories.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                        <span>Phụ kiện</span>
+                    </a>
+                    <a href="smartwatch.html" class="cat-item">
+                        <i class="fas fa-microchip" style="margin-right: 8px;"></i>
+                        <span>Smartwatch</span>
+                    </a>
+                    <a href="watches.html" class="cat-item active">
+                        <i class="fas fa-clock" style="margin-right: 8px;"></i>
+                        <span>Đồng hồ</span>
+                    </a>
+                    <a href="tablet.html" class="cat-item">
+                        <i class="fas fa-tablet-alt" style="margin-right: 8px;"></i>
+                        <span>Tablet</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="page-container" style="padding: 2rem 0;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h2 style="margin-bottom: 2rem;">Đồng hồ Thời trang</h2>
+            <div class="product-grid" id="watchesGrid">
+                <!-- Data from API -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechNova. Bản quyền đã được bảo hộ.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchCategoryProducts('Đồng hồ', 'watchesGrid');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản cá nhân | TechNova</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .profile-container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+        }
+
+        .profile-sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .user-info-side {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .user-info-side img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            border: 3px solid var(--accent);
+        }
+
+        .profile-nav {
+            list-style: none;
+            padding: 0;
+        }
+
+        .profile-nav li {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: 0.3s;
+            color: #64748b;
+        }
+
+        .profile-nav li:hover, .profile-nav li.active {
+            background: rgba(66, 133, 244, 0.1);
+            color: var(--accent);
+        }
+
+        .profile-main {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .order-card {
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .order-card:hover {
+            border-color: var(--accent);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dotted #eee;
+        }
+
+        .status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .status-pending { background: #fff7ed; color: #c2410c; }
+        .status-confirmed { background: #f0fdf4; color: #15803d; }
+    </style>
+</head>
+<body>
+    <header class="top-header">
+        <div class="top-banner">
+            Có AI Thông minh hơn Xài SƯỚNG hơn <span class="discount-box">Giảm đến 50%</span>
+        </div>
+        <nav class="navbar">
+            <div class="nav-main">
+                <div class="nav-container">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt"></i>
+                        Tech<span>Nova</span>
+                    </a>
+                    
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Bạn tìm gì hôm nay?">
+                    </div>
+
+                    <div class="nav-actions">
+                        <a href="auth.html" class="action-item">
+                            <i class="far fa-user"></i>
+                            Đăng nhập
+                        </a>
+                        <a href="cart.html" class="action-item">
+                            <div style="position: relative;">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            Giỏ hàng
+                        </a>
+                        <div class="location-btn">
+                            <i class="fas fa-location-dot"></i>
+                            Hồ Chí Minh
+                            <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-nav">
+                <div class="cat-container">
+                    <a href="phones.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>Điện thoại</span>
+                    </a>
+                    <div class="has-mega">
+                        <a href="accessories.html" class="cat-item">
+                            <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                            <span>Phụ kiện</span>
+                            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <div class="mega-menu">
+                            <div class="mega-container">
+                                <div class="mega-column">
+                                    <h4>Phụ kiện di động</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-battery-three-quarters"></i><span>Sạc dự phòng</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-bolt"></i><span>Sạc, cáp</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-mobile-alt"></i><span>Ốp lưng điện thoại</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-tablet-alt"></i><span>Ốp máy tính bảng</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-scroll"></i><span>Miếng dán màn hình</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-pen-nib"></i><span>Bút cảm ứng</span></a>
+                                    </div>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Thiết bị âm thanh</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-headphones"></i><span>Tai nghe Bluetooth</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-headphones-alt"></i><span>Tai nghe có dây</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-volume-up"></i><span>Loa Bluetooth</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-microphone"></i><span>Micro thu âm</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-music"></i><span>Loa vi tính</span></a>
+                                    </div>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Camera</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-video"></i><span>Camera giám sát</span><span class="badge-hot">Hot</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-camera"></i><span>Camera hành trình</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-camera-retro"></i><span>Máy ảnh</span><span class="badge-new">Mới</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-memory"></i><span>Thẻ nhớ</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="smartwatch.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="6" rx="1"></rect><rect x="6" y="16" width="12" height="6" rx="1"></rect><rect x="4" y="8" width="16" height="8" rx="2"></rect></svg>
+                        <span>Smartwatch</span>
+                    </a>
+                    <a href="watches.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg>
+                        <span>Đồng hồ</span>
+                    </a>
+                    <a href="tablet.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>Tablet</span>
+                    </a>
+                    <div class="has-dropdown">
+                        <a href="#" class="cat-item">
+                            <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
+                            <span>Máy cũ, Thu cũ</span>
+                            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <div class="dropdown-menu">
+                            <h4>Máy cũ, Thu cũ</h4>
+                            <div class="dropdown-grid">
+                                <a href="#" class="dropdown-item">
+                                    <div class="drop-icon-box">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <div class="drop-badge">MÁY CŨ</div>
+                                    </div>
+                                    <span>Máy cũ giá tốt</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="drop-icon-box">
+                                        <i class="fas fa-sync-alt"></i>
+                                        <div class="drop-badge">THU CŨ</div>
+                                    </div>
+                                    <span>Thu cũ đổi mới</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="profile-container">
+        <aside class="profile-sidebar">
+            <div class="user-info-side">
+                <img src="https://ui-avatars.com/api/?name=User&background=random" id="profileAvatar">
+                <h3 id="profileName">Tên khách hàng</h3>
+                <p id="profileEmail" style="font-size: 0.9rem; color: #64748b;">email@example.com</p>
+            </div>
+            <ul class="profile-nav">
+                <li class="active" onclick="showTab('history')"><i class="fas fa-shopping-bag"></i> Lịch sử mua hàng</li>
+                <li onclick="showTab('vouchers')"><i class="fas fa-ticket-alt"></i> Kho Voucher</li>
+                <li onclick="showTab('settings')"><i class="fas fa-user-cog"></i> Cài đặt tài khoản</li>
+                <li onclick="logout()"><i class="fas fa-sign-out-alt"></i> Đăng xuất</li>
+            </ul>
+        </aside>
+
+        <main class="profile-main">
+            <div id="historyTab" class="profile-section">
+                <h2 style="margin-bottom: 2rem;">Lịch sử đơn hàng</h2>
+                <div id="orderHistoryList">
+                    <!-- Orders injected by JS -->
+                </div>
+            </div>
+
+            <div id="vouchersTab" class="profile-section" style="display:none;">
+                <h2 style="margin-bottom: 2rem;">Voucher của bạn</h2>
+                <div class="stats-grid" id="voucherList" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <!-- Vouchers injected by JS -->
+                </div>
+            </div>
+
+            <div id="settingsTab" class="profile-section" style="display:none;">
+                <h2 style="margin-bottom: 2rem;">Cài đặt tài khoản</h2>
+                <form id="settingsForm" onsubmit="saveSettings(event)">
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Họ và tên</label>
+                        <input type="text" id="settingName" class="form-control" required style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Email (Không thể thay đổi)</label>
+                        <input type="email" id="settingEmail" class="form-control" readonly style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd; background: #f5f5f5;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Số điện thoại</label>
+                        <input type="tel" id="settingPhone" class="form-control" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 1.5rem;">
+                        <label>Địa chỉ</label>
+                        <textarea id="settingAddress" class="form-control" style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd; min-height: 100px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 200px; border: none;">Lưu thay đổi</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                window.location.href = 'auth.html';
+                return;
+            }
+
+            document.getElementById('profileName').innerText = user.name;
+            document.getElementById('profileEmail').innerText = user.email;
+            document.getElementById('profileAvatar').src = `https://ui-avatars.com/api/?name=${user.name}&background=random`;
+
+            loadOrderHistory(user.email);
+            loadVouchers();
+            
+            // Fill settings form
+            document.getElementById('settingName').value = user.name;
+            document.getElementById('settingEmail').value = user.email;
+            document.getElementById('settingPhone').value = user.phone || '';
+            document.getElementById('settingAddress').value = user.address || '';
+        });
+
+        async function saveSettings(event) {
+            event.preventDefault();
+            const user = JSON.parse(localStorage.getItem('user'));
+            const updatedUser = {
+                ...user,
+                name: document.getElementById('settingName').value,
+                phone: document.getElementById('settingPhone').value,
+                address: document.getElementById('settingAddress').value
+            };
+
+            // Update localStorage
+            localStorage.setItem('user', JSON.stringify(updatedUser));
+            
+            // Update UI
+            document.getElementById('profileName').innerText = updatedUser.name;
+            
+            alert('Cập nhật thông tin thành công!');
+        }
+
+        async function loadOrderHistory(email) {
+            try {
+                const res = await fetch(`${API_URL}/orders/user/${email}`);
+                const orders = await res.json();
+                const list = document.getElementById('orderHistoryList');
+                
+                if (orders.length === 0) {
+                    list.innerHTML = '<p>Bạn chưa có đơn hàng nào.</p>';
+                    return;
+                }
+
+                list.innerHTML = orders.map(o => `
+                    <div class="order-card">
+                        <div class="order-header">
+                            <strong>Mã đơn: #${o.id}</strong>
+                            <span class="status-badge status-${o.status.toLowerCase()}">${o.status}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <p style="margin:0;">Ngày đặt: ${o.date}</p>
+                                <p style="margin: 0.3rem 0 0; color: #64748b; font-size: 0.9rem;">${o.items.join(', ')}</p>
+                            </div>
+                            <div style="text-align: right;">
+                                <p style="font-weight: 700; color: var(--accent); font-size: 1.2rem; margin:0;">${o.total}</p>
+                                <button class="btn btn-sm btn-outline" style="margin-top: 0.5rem;" onclick="reviewOrder('${o.id}')">Đánh giá</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function loadVouchers() {
+            try {
+                const res = await fetch(`${API_URL}/vouchers`);
+                const vouchers = await res.json();
+                const list = document.getElementById('voucherList');
+                list.innerHTML = vouchers.map(v => `
+                    <div class="stat-card" style="border: 2px dashed var(--accent); position: relative;">
+                        <div style="font-weight: 700; color: var(--accent); font-size: 1.2rem;">${v.code}</div>
+                        <p style="font-size: 0.85rem; margin: 0.5rem 0;">${v.desc}</p>
+                        <button class="btn btn-sm btn-primary" style="width: 100%; border-radius: 8px;">Dùng ngay</button>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        function showTab(tab) {
+            document.querySelectorAll('.profile-section').forEach(s => s.style.display = 'none');
+            document.getElementById(tab + 'Tab').style.display = 'block';
+            document.querySelectorAll('.profile-nav li').forEach(li => li.classList.remove('active'));
+            const currentTab = Array.from(document.querySelectorAll('.profile-nav li')).find(li => li.innerText.toLowerCase().includes(tab === 'history' ? 'lịch sử' : tab === 'vouchers' ? 'vouchers' : 'cài đặt'));
+            if(currentTab) currentTab.classList.add('active');
+        }
+
+        function logout() {
+            localStorage.removeItem('user');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

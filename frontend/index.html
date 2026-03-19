@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova | Cửa hàng điện thoại cao cấp</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Header -->
+    <header class="top-header">
+        <div class="top-banner">
+            Có AI Thông minh hơn Xài SƯỚNG hơn <span class="discount-box">Giảm đến 50%</span>
+        </div>
+        <nav class="navbar">
+            <div class="nav-main">
+                <div class="nav-container">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-bolt"></i>
+                        Tech<span>Nova</span>
+                    </a>
+                    
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Bạn tìm gì hôm nay?">
+                    </div>
+
+                    <div class="nav-actions">
+                        <a href="auth.html" class="action-item">
+                            <i class="far fa-user"></i>
+                            Đăng nhập
+                        </a>
+                        <a href="cart.html" class="action-item">
+                            <div style="position: relative;">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </div>
+                            Giỏ hàng
+                        </a>
+                        <div class="location-container">
+                            <div class="location-btn">
+                                <i class="fas fa-location-dot"></i>
+                                <span class="current-location">Hồ Chí Minh</span>
+                                <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i>
+                            </div>
+                            <div class="location-dropdown">
+                                <h4>Chọn khu vực của bạn</h4>
+                                <div class="location-list">
+                                    <div class="loc-item active" onclick="selectLocation('Hồ Chí Minh')">Hồ Chí Minh</div>
+                                    <div class="loc-item" onclick="selectLocation('Hà Nội')">Hà Nội</div>
+                                    <div class="loc-item" onclick="selectLocation('Đà Nẵng')">Đà Nẵng</div>
+                                    <div class="loc-item" onclick="selectLocation('Cần Thơ')">Cần Thơ</div>
+                                    <div class="loc-item" onclick="selectLocation('Hải Phòng')">Hải Phòng</div>
+                                    <div class="loc-item" onclick="selectLocation('Bình Dương')">Bình Dương</div>
+                                    <div class="loc-item" onclick="selectLocation('Đồng Nai')">Đồng Nai</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-nav">
+                <div class="cat-container">
+                    <a href="phones.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>Điện thoại</span>
+                    </a>
+                    <div class="has-mega">
+                        <a href="accessories.html" class="cat-item">
+                            <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                            <span>Phụ kiện</span>
+                            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <!-- Mega Menu Structure -->
+                        <div class="mega-menu">
+                            <div class="mega-container">
+                                <div class="mega-column">
+                                    <h4>Phụ kiện di động</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-battery-three-quarters"></i><span>Sạc dự phòng</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-bolt"></i><span>Sạc, cáp</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-mobile-alt"></i><span>Ốp lưng điện thoại</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-tablet-alt"></i><span>Ốp máy tính bảng</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-scroll"></i><span>Miếng dán màn hình</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-pen-nib"></i><span>Bút cảm ứng</span></a>
+                                    </div>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Thiết bị âm thanh</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-headphones"></i><span>Tai nghe Bluetooth</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-headphones-alt"></i><span>Tai nghe có dây</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-volume-up"></i><span>Loa Bluetooth</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-microphone"></i><span>Micro thu âm</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-music"></i><span>Loa vi tính</span></a>
+                                    </div>
+                                </div>
+                                <div class="mega-column">
+                                    <h4>Camera</h4>
+                                    <div class="mega-list">
+                                        <a href="#" class="mega-item"><i class="fas fa-video"></i><span>Camera giám sát</span><span class="badge-hot">Hot</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-camera"></i><span>Camera hành trình</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-camera-retro"></i><span>Máy ảnh</span><span class="badge-new">Mới</span></a>
+                                        <a href="#" class="mega-item"><i class="fas fa-memory"></i><span>Thẻ nhớ</span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="smartwatch.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="6" rx="1"></rect><rect x="6" y="16" width="12" height="6" rx="1"></rect><rect x="4" y="8" width="16" height="8" rx="2"></rect></svg>
+                        <span>Smartwatch</span>
+                    </a>
+                    <a href="watches.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"></circle><polyline points="12 9 12 12 13.5 13.5"></polyline><path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83"></path></svg>
+                        <span>Đồng hồ</span>
+                    </a>
+                    <a href="tablet.html" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                        <span>Tablet</span>
+                    </a>
+                    <div class="has-dropdown">
+                        <a href="#" class="cat-item">
+                            <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
+                            <span>Máy cũ, Thu cũ</span>
+                            <svg class="cat-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </a>
+                        <!-- Dropdown Menu -->
+                        <div class="dropdown-menu">
+                            <h4>Máy cũ, Thu cũ</h4>
+                            <div class="dropdown-grid">
+                                <a href="#" class="dropdown-item">
+                                    <div class="drop-icon-box">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <div class="drop-badge">MÁY CŨ</div>
+                                    </div>
+                                    <span>Máy cũ giá tốt</span>
+                                </a>
+                                <a href="#" class="dropdown-item">
+                                    <div class="drop-icon-box">
+                                        <i class="fas fa-sync-alt"></i>
+                                        <div class="drop-badge">THU CŨ</div>
+                                    </div>
+                                    <span>Thu cũ đổi mới</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <span>Màn hình</span>
+                    </a>
+                    <a href="#" class="cat-item">
+                        <svg class="cat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        <span>Sim, Thẻ cào</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-up">
+                Bứt Phá 
+                <span>Công Nghệ</span>
+            </h1>
+            <p class="hero-subtitle animate-fade-up delay-1">
+                Khám phá thế giới smartphone đỉnh cao với hiệu năng vượt giới hạn và thiết kế sang trọng bậc nhất. 
+                Trải nghiệm tương lai ngay hôm nay.
+            </p>
+            <div class="hero-buttons animate-fade-up delay-2">
+                <a href="#products" class="btn btn-primary">Mua ngay</a>
+                <a href="about.html" class="btn btn-secondary">Tìm hiểu thêm</a>
+            </div>
+        </div>
+        <div class="hero-visual animate-scale-up delay-3">
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="screen-content">
+                        <div class="lock-screen-time">09:41</div>
+                        <div class="lock-screen-date">Thứ Sáu, 13 tháng 3</div>
+                        <div class="lock-screen-widget">
+                            <span>📱 TechNova</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="glow"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="products-section">
+        <div class="section-header scroll-fade-up">
+            <h2>Sản Phẩm Điện Thoại</h2>
+            <p>Những tuyệt tác công nghệ được săn đón nhất hiện nay.</p>
+        </div>
+
+        <!-- Banners Điện thoại -->
+        <div class="category-banners scroll-fade-up delay-1">
+            <div class="banner-item">
+                <button class="banner-nav-btn prev">‹</button>
+                <img src="images/anh12.png" alt="Promo 1">
+            </div>
+            <div class="banner-item">
+                <img src="images/anh13.png" alt="Promo 2">
+                <button class="banner-nav-btn next">›</button>
+            </div>
+        </div>
+
+        <!-- Bộ lọc và Sắp xếp -->
+        <div class="filter-sort-container scroll-fade-up delay-2">
+            <div class="filter-brands">
+                <button class="filter-btn-main">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                    </svg>
+                    Lọc
+                </button>
+                <div class="brand-list">
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 800; font-family: Arial, sans-serif; letter-spacing: -0.5px; font-size: 1.1rem;">SAMSUNG</span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 500; display:flex; align-items:center; gap:0.2rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.226 13.91l-3.235-4.578L8.766 15.91H7.132l4.137-5.83-3.8-5.385h1.614l3.05 4.316 2.97-4.316h1.638l-3.89 5.65 4.025 5.565h-1.65z"/></svg> 
+                            iPhone
+                        </span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 700; color: #ff6900; letter-spacing: 1px;">XIAOMI</span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 700; color: #00ce7a; letter-spacing: 1px;">OPPO</span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 700; color: #a78bfa; font-style: italic;">vivo</span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 600; color: #fbbf24;">realme</span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 800; font-family: sans-serif; letter-spacing: 1px; color: #ffffff;">HONOR</span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="display:flex; align-items:center; gap:0.2rem; font-weight: 600;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-2 14H8V8h2v8zm4 0h-2V8h2v8z"/></svg> 
+                            motorola
+                        </span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 800; color: #60a5fa; font-family: Arial, sans-serif; letter-spacing: 1px;">NOKIA</span>
+                    </button>
+                    <button class="brand-btn">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                        <span style="font-weight: 800; color: #93c5fd; font-family: monospace; font-size: 1.1rem; letter-spacing: -0.5px;">TECNO</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="sort-options">
+                <span class="sort-label">Sắp xếp theo:</span>
+                <button class="sort-btn active">Nổi bật</button>
+                <button class="sort-btn">Bán chạy</button>
+                <button class="sort-btn">Giảm giá</button>
+                <button class="sort-btn">Mới</button>
+                <button class="sort-btn" style="display:flex; align-items:center; gap:0.2rem;">Giá
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <!-- Sản phẩm sẽ được render bằng JavaScript -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-bolt"></i>
+                    Tech<span>Nova</span>
+                </a>
+                <p>Nền tảng mua sắm thiết bị công nghệ chính hãng hàng đầu Việt Nam. Đối tác tin cậy của bạn trên hành
+                    trình chinh phục không gian số.</p>
+                <div class="social-links">
+                    <a href="#">FB</a>
+                    <a href="#">IG</a>
+                    <a href="#">X</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Sản phẩm</h3>
+                <a href="index.html#products">Điện thoại</a>
+                <a href="accessories.html">Phụ kiện</a>
+                <a href="#">Hàng cũ</a>
+                <a href="#">Bảo hiểm</a>
+            </div>
+            <div class="footer-links">
+                <h3>Khách hàng</h3>
+                <a href="#">Hướng dẫn mua hàng</a>
+                <a href="#">Chính sách bảo hành</a>
+                <a href="#">Chính sách đổi trả</a>
+                <a href="#">Bảo mật thông tin</a>
+            </div>
+            <div class="footer-links">
+                <h3>Liên hệ</h3>
+                <p>Hotline: 1900 xxxx (8h - 22h)</p>
+                <p>Email: hotro@technova.vn</p>
+                <p>Hệ thống 50+ cửa hàng trên toàn quốc.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TechNova. Bản quyền đã được bảo hộ.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
